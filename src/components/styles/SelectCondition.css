@@ -1,0 +1,114 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* Ensure Body & HTML Don't Overflow */
+html, body {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Container */
+.select-condition-container {
+  text-align: center;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.5s ease-in-out;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Backgrounds */
+.select-condition-container.day {
+  background: url("../../assets/day.png") no-repeat center center/cover;
+}
+
+.select-condition-container.night {
+  background: url("../../assets/night.png") no-repeat center center/cover;
+}
+
+/* Small Toggle Button */
+.toggle-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 35px;
+  height: 35px;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: black;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.select-condition-container.night .toggle-btn {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+/* Grid for Conditions */
+.conditions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Initially 3 per row */
+  gap: 15px;
+  justify-content: center;
+  max-width: 450px;
+  margin: auto;
+}
+
+/* Condition Boxes (Fixed Size) */
+.condition-box {
+  width: 120px; /* Constant size */
+  height: 120px; /* Constant size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Dark Mode for Boxes */
+.select-condition-container.night .condition-box {
+  background-color: rgba(50, 50, 50, 0.9);
+  color: white;
+  box-shadow: 0px 3px 6px rgba(255, 255, 255, 0.2);
+}
+
+/* Hover Effect */
+.condition-box:hover {
+  transform: scale(1.03);
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 600px) {
+  .conditions-grid {
+    grid-template-columns: repeat(2, 1fr); /* Adjust to 2 per row */
+    gap: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .conditions-grid {
+    grid-template-columns: repeat(1, 1fr); /* Adjust to 1 per row on very small screens */
+  }
+}

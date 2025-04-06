@@ -1,0 +1,39 @@
+.bottom-nav {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%; /* adjust as needed, e.g., 80%, 70% */
+  max-width: 500px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.7); /* translucent white */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 999;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.bottom-nav button {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: 24px;
+  color: #555;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.bottom-nav button.active {
+  color: #4a90e2;
+  transform: scale(1.2);
+}
+
+.bottom-nav button:hover {
+  color: #4a90e2;
+}

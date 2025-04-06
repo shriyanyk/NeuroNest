@@ -1,0 +1,230 @@
+.back-btn {
+  position: fixed;
+  top: 6px;
+  left: 16px;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0; /* ✅ remove extra padding */
+  border-radius: 50%;
+  transition: background-color 0.3s;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* ✅ remove scrollbar */
+  box-sizing: border-box;
+}
+
+.back-btn:hover {
+  background-color: rgba(0, 0, 0, 0.1); /* Hover effect in small circular area */
+}
+/* Light/Dark Toggle */
+.small-toggle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 35px;
+  height: 35px;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: black;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.chatbot-container.night .small-toggle {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+/* Chat Container */
+.chatbot-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px 80px;
+  /* space for input + top btns */
+  position: relative;
+}
+
+.chatbot-container.day {
+  background: url("../../assets/day.png") no-repeat center center/cover;
+  color: #000;
+}
+
+.chatbot-container.night {
+  background: url("../../assets/night.png") no-repeat center center/cover;
+  color: #fff;
+}
+
+/* Chat Messages */
+.chatbox {
+  width: 100%;
+  max-width: 400px;
+  flex: 1;
+  overflow-y: auto; /* ✅ SCROLLBAR here */
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+}
+
+.message {
+  max-width: 70%;
+  padding: 10px 15px;
+  margin: 5px 0;
+  border-radius: 18px;
+  line-height: 1.4;
+  overflow: visible;     /* ✅ Make sure content just flows */
+  white-space: normal;   /* ✅ Allow wrapping */
+  word-break: break-word;
+}
+
+.message.bot {
+  background: #e0e0e0;
+  color: #000;
+  align-self: flex-start;
+}
+
+.message.user {
+  background: #007bff;
+  color: white;
+  align-self: flex-end;
+}
+
+.chatbot-container.night .message.bot {
+  background: #444;
+  color: #fff;
+}
+
+.input-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 20px;
+  margin-bottom: 80px;
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+}
+
+.input-area input {
+  flex: 1;
+  padding: 12px 16px;
+  font-size: 16px;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  outline: none;
+  background-color: #fff;
+  color: #000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: border 0.3s ease;
+}
+
+.input-area input:focus {
+  border: 1px solid #4a90e2;
+}
+
+.send-btn {
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background-color: #4a90e2;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  flex-shrink: 0;
+}
+
+.send-btn:hover {
+  background-color: #357ac8;
+}
+
+.chatbot-container.night .input-area {
+  background: #2c2f33;
+}
+
+.input-area input {
+  flex: 1;
+  border: none;
+  padding: 10px 12px;
+  font-size: 15px;
+  background: transparent;
+  outline: none;
+  color: #000;
+}
+
+.chatbot-container.night .input-area input {
+  background-color: #444;
+  color: #fff;
+  border: 1px solid #666;
+}
+
+.send-btn {
+  flex-shrink: 0;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8px;
+  background: transparent;
+  border: none;
+  color: #007bff; /* Make sure it's visible */
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.2s ease;
+  overflow: hidden; /* ✅ Prevent scrollbars */
+}
+
+.send-btn:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.chatbot-container.night .send-btn {
+  background-color: #1da1f2;
+  color: white;
+}
+
+.chatbot-container.night .send-btn:hover {
+  background-color: #147bc1;
+}
+
+.suggestion-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0;
+  justify-content: flex-start;
+}
+
+.suggestion-btn {
+  background-color: #e0e0e0;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.suggestion-btn:hover {
+  background-color: #d3d3d3;
+}
